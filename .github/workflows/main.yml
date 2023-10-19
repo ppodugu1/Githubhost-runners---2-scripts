@@ -1,0 +1,40 @@
+name: 2-programs
+
+on: [push, pull_request]
+
+jobs:
+  job1:
+    name: add
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.11
+
+      - name: Compile and run add program
+        run: |
+          python add.py
+          python add
+
+  job2:
+    name: sub
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.11
+
+      - name: Compile and run sub program
+        run: |
+          python sub.py
+          python sub
