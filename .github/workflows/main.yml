@@ -9,17 +9,16 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
-      - name: Set up Python 3.11
-        uses: actions/setup-python@v1
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v2
         with:
-          python-version: 3.11
+          python-version: 3.10
 
       - name: Compile and run add program
         run: |
           python add.py
-          python add
 
   job2:
     name: sub
@@ -27,14 +26,14 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
-      - name: Set up Python 3.11
-        uses: actions/setup-python@v1
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v2
         with:
-          python-version: 1.11
+          python-version: 3.10
 
       - name: Compile and run sub program
         run: |
           python sub.py
-          python sub
+
